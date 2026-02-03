@@ -1,19 +1,9 @@
-from multiples import is_one_multiple_of_other
+def is_one_multiple_of_other(a: int, b: int) -> bool:
 
-def main():
-    while True:
-        a = int(input("Enter first number (-1 to stop): "))
-        if a == -1:
-            break
+    if a == 0 or b == 0:
+        return False
 
-        b = int(input("Enter second number (-1 to stop): "))
-        if b == -1:
-            break
+    if a % b == 0 or b % a == 0:
+        return True
 
-        if is_one_multiple_of_other(a, b):
-            print("Yes - one number is a multiple of the other.")
-        else:
-            print("No - neither number is a multiple of the other.")
-
-if __name__ == "__main__":
-    main()
+    return False
